@@ -1,0 +1,30 @@
+body { 
+	width: 92vw; 
+	margin: 0 auto;
+	padding: 30px 15px;
+} 
+ul { 
+	list-style-type: none;
+	padding: 0; 
+} 
+ul li {  
+	display:inline-block; 
+	margin:0 20px; 
+	padding: 0;
+	cursor:pointer; 
+} 
+ul li.active { 
+	color:#990000; 
+} 
+.tabs_menu{	
+}
+.tabs {  
+	border: 5px solid #ccc; 
+} 
+.tabs .info{ 
+	display:none;  
+	margin:0 auto; 
+} 
+.tabs .info.active{ 
+	display:block; 
+}  
