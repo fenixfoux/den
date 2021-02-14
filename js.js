@@ -1,22 +1,25 @@
 $(document).ready(function(){
 
+	var a = parseInt(document.getElementById('dist').value);  
+	if (isNaN(a)==true) a=0; 
+	var check = true;
 	$('#calc').click(function(){
 		var a = parseInt(document.getElementById('dist').value);  
 		if (isNaN(a)==true) a=0; 
-		//var result = a ; 
+		var result = a ; 
 		document.getElementById('result').innerHTML = result;
 		detected_input_range();
+		console.log(check);
 	});
 
 
-
 	function detected_input_range(a){
-		if(a==10){
-			alertfunc();
+		if(a<300&&a>200){
+			check = true;
 		}else{
-			alertfunc2();
+			check = false;
 		}
-
+		return(check);
 
 	}
 
