@@ -3,28 +3,16 @@ body {
 	margin: 0 auto;
 	padding: 30px 15px;
 } 
-ul { 
-	list-style-type: none;
-	padding: 0; 
-} 
-ul li {  
-	display:inline-block; 
-	margin:0 20px; 
-	padding: 0;
-	cursor:pointer; 
-}  
-ul li.active { 
-	color:#990000; 
-} 
-.tabs_menu{	
+.input_dates{
+	margin-bottom: 25px;
 }
-.tabs {  
-	border: 5px solid #ccc; 
-} 
-.tabs .info{ 
-	display:none;  
-	margin:0 auto; 
-} 
-.tabs .info.active{ 
-	display:block; 
-}  
+.align_input_blocks div{  
+}
+.align_input_blocks input{  
+	width: 125px;
+}
+.input_dates input{
+	padding: 7px;
+	margin-bottom: 25px;
+	margin-top: 5px;
+}
