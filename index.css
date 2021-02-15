@@ -12,7 +12,7 @@ ul li {
 	margin:0 20px; 
 	padding: 0;
 	cursor:pointer; 
-} 
+}  
 ul li.active { 
 	color:#990000; 
 } 
