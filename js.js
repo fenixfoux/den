@@ -1,7 +1,11 @@
+//если кто то это видит и/или открыл фаил, прошу простить за ужас который дальше, 
+//ибо не ведал что творю я и рассудок мой помутнен был, в агонии и ужасе, писав
+//старался выбраться в болоте барахтаясь и прибегая к темнейшим методам силы...
+//тьма поглощает мой разум..простите предки
 $(document).ready(function(){
 	var a;
 	var b;
-	var check = true;
+	var check = true; 
 	var needable_range;
 	var variable_range = 0;// разница дальностей между диапазонами деленная на 100=насколько больше единиц за каждый метр минусуется
 	var stable_range = 0;
@@ -45,6 +49,7 @@ $(document).ready(function(){
 			alert("тип снаряда Charge_0 не может лететь дальше 400метров");
 		}
 		console.log(calc_result_range);
+		document.getElementById('calculated_necesare_ungle_distace').innerHTML = calc_result_range;
 	});
 
 	$('#calc_range_1').click(function(){ 
@@ -130,9 +135,10 @@ $(document).ready(function(){
 			calc_result_range=stable_range-(range_height_variable+variable_range);
 		}
 		else {
-			alert("тип снаряда Charge_0 не может лететь дальше 1300метров");
+			alert("тип снаряда Charge_1 не может лететь дальше 1300метров");
 		}
 		console.log(calc_result_range);
+		document.getElementById('calculated_necesare_ungle_distace').innerHTML = calc_result_range;
 	});
 
 	$('#calc_range_2').click(function(){ 
@@ -144,8 +150,8 @@ $(document).ready(function(){
 		var result2 = b;
 		document.getElementById('result').innerHTML = result;
 		document.getElementById('result2').innerHTML = result2; 
-		if(a<300){
-			alert("тип снаряда Charge_1 не может лететь меньше 300метров")
+		if(a<500){
+			alert("тип снаряда Charge_2 не может лететь меньше 500метров")
 		}else if(a>=500&&a<600){
 			difference_range = a-500;
 			range_height_stable = 2; 
@@ -274,72 +280,1109 @@ $(document).ready(function(){
 			calc_result_range=stable_range-(range_height_variable+variable_range);
 		}
 		else {
-			alert("тип снаряда Charge_0 не может лететь дальше 1300метров");
+			alert("тип снаряда Charge_2 не может лететь дальше 2300метров");
 		}
 		console.log(calc_result_range);
+		document.getElementById('calculated_necesare_ungle_distace').innerHTML = calc_result_range;
 	});
 //дальность текущего диапазона минус дальность следующего диапазона, 
 //потом результат делим на 100 чтобы определить сколько за каждый 1метр нужно 
 //прибавить к минусуемому числу из дальности текущего диапазона, так же умножаем стабильную 
 //дальность изза разницы высот на разницу высот и делим на 100 чтобы узнать 
 
-
-/*
-
-	function detected_input_range(a){
-		if(a>=100&&a<200){
-			difference_range = a-100;
-			range_height_stable = 9; 
-			stable_range = 1494;
-			range_height_variable = (range_height_variable*9)/100;
-			variable_range = ((stable_range-1384)/100)*difference_range; 
+$('#calc_range_3').click(function(){ 
+		a = parseInt(document.getElementById('dist').value);  
+		if (isNaN(a)==true) a=0; 
+		range_height_variable = parseInt(document.getElementById('dist_height').value);  
+		if (isNaN(b)==true) b=0; 
+		var result = a ; 
+		var result2 = b;
+		document.getElementById('result').innerHTML = result;
+		document.getElementById('result2').innerHTML = result2; 
+		if(a<600){
+			alert("тип снаряда Charge_3 не может лететь меньше 600метров")
+		}else if(a>=600&&a<700){
+			difference_range = a-600;
+			range_height_stable = 1; 
+			stable_range = 1507;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1492)/100)*difference_range; 
 			calc_result_range=stable_range-(range_height_variable+variable_range);
-		}else if(a>=200&&a<300){
-			difference_range = a-200; 
-			stable_range = 1384;
-		}else if(a>=300&&a<400){ 
-			difference_range = a-300; 
-			stable_range = 1260;
-		}else if(a>=400&&a<500){ 
-			difference_range = a-400; 
+		}else if(a>=700&&a<800){
+			difference_range = a-700;
+			range_height_stable = 1; 
+			stable_range = 1492;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1476)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=800&&a<900){
+			difference_range = a-800;
+			range_height_stable = 1; 
+			stable_range = 1476;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1460)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=900&&a<1000){
+			difference_range = a-900;
+			range_height_stable = 2; 
+			stable_range = 1460;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1444)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1000&&a<1100){
+			difference_range = a-1000;
+			range_height_stable = 2; 
+			stable_range = 1444;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1427)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1100&&a<1200){
+			difference_range = a-1100;
+			range_height_stable = 2; 
+			stable_range = 1427;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1411)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1200&&a<1300){
+			difference_range = a-1200;
+			range_height_stable = 3; 
+			stable_range = 1411;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1394)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1300&&a<1400){
+			difference_range = a-1300;
+			range_height_stable = 3; 
+			stable_range = 1394;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1377)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1400&&a<1500){
+			difference_range = a-1400;
+			range_height_stable = 3; 
+			stable_range = 1377;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1359)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1500&&a<1600){
+			difference_range = a-1500;
+			range_height_stable = 4; 
+			stable_range = 1359;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1341)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1600&&a<1700){
+			difference_range = a-1600;
+			range_height_stable = 4; 
+			stable_range = 1341;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1323)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1700&&a<1800){
+			difference_range = a-1700;
+			range_height_stable = 4; 
+			stable_range = 1323;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1305)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1800&&a<1900){
+			difference_range = a-1800;
+			range_height_stable = 5; 
+			stable_range = 1305;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1286)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1900&&a<2000){
+			difference_range = a-1900;
+			range_height_stable = 5; 
+			stable_range = 1286;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1266)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2000&&a<2100){
+			difference_range = a-2000;
+			range_height_stable = 6; 
+			stable_range = 1266;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1246)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2100&&a<2200){
+			difference_range = a-2100;
+			range_height_stable = 6; 
+			stable_range = 1246;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1225)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2200&&a<2300){
+			difference_range = a-2200;
+			range_height_stable = 7; 
+			stable_range = 1225;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1203)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2300&&a<2400){
+			difference_range = a-2300;
+			range_height_stable = 7; 
+			stable_range = 1203;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-180)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2400&&a<2500){
+			difference_range = a-2400;
+			range_height_stable = 8; 
+			stable_range = 1180;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1157)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2500&&a<2600){
+			difference_range = a-2500;
+			range_height_stable = 9; 
+			stable_range = 1157;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1131)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2600&&a<2700){
+			difference_range = a-2600;
+			range_height_stable = 10; 
+			stable_range = 1131;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1105)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2700&&a<2800){
+			difference_range = a-2700;
+			range_height_stable = 12; 
 			stable_range = 1105;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1075)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2800&&a<2900){
+			difference_range = a-2800;
+			range_height_stable = 14; 
+			stable_range = 1075;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1044)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2900&&a<3000){
+			difference_range = a-2900;
+			range_height_stable = 16; 
+			stable_range = 1044;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1008)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3000&&a<3100){
+			difference_range = a-3000;
+			range_height_stable = 19; 
+			stable_range = 1008;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-966)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3100&&a<3200){
+			difference_range = a-3100;
+			range_height_stable = 24; 
+			stable_range = 966;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-913)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3200&&a<3300){
+			difference_range = a-3200;
+			range_height_stable = 34; 
+			stable_range = 913;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-822)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
 		}
-		return(variable_range);
-
-	} 
-
-
-
-
-function alertfunc(){alert('не равно 10');}
-function alertfunc2(){alert('равно 10')}
-
-/*
-function alertfunc(){alert();}
-alertfunc();
-
-	$('#calc').click(function(){
-		var a = parseInt(document.getElementById('a').value);
-		var b = parseInt(document.getElementById('b').value);
-
-		if (isNaN(a)==true) a=0;
-		if (isNaN(b)==true) b=0;
-		var c = a + b;
-		console.log(c);
-		document.getElementById('result').innerHTML = c;
+		else {
+			alert("тип снаряда Charge_3 не может лететь дальше 3300метров");
+		}
+		console.log(calc_result_range);
+		document.getElementById('calculated_necesare_ungle_distace').innerHTML = calc_result_range;
 	});
-
-
-/*
-	var altitude;
-	var distance = $('#distance').val();
-	var ungle;
-
-  $(".check").click(function(){
-    console.log(distance);
-    alert(distance); 
-  });
- 
-  */
+$('#calc_range_4').click(function(){ 
+		a = parseInt(document.getElementById('dist').value);  
+		if (isNaN(a)==true) a=0; 
+		range_height_variable = parseInt(document.getElementById('dist_height').value);  
+		if (isNaN(b)==true) b=0; 
+		var result = a ; 
+		var result2 = b;
+		document.getElementById('result').innerHTML = result;
+		document.getElementById('result2').innerHTML = result2; 
+		if(a<800){
+			alert("тип снаряда Charge_4 не может лететь меньше 800метров")
+		}else if(a>=800&&a<900){
+			difference_range = a-800;
+			range_height_stable = 1; 
+			stable_range = 1501;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1488)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=900&&a<1000){
+			difference_range = a-900;
+			range_height_stable = 1; 
+			stable_range = 1488;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1476)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1000&&a<1100){
+			difference_range = a-1000;
+			range_height_stable = 1; 
+			stable_range = 1476;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1463)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1100&&a<1200){
+			difference_range = a-1100;
+			range_height_stable = 1; 
+			stable_range = 1463;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1450)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1200&&a<1300){
+			difference_range = a-1200;
+			range_height_stable = 2; 
+			stable_range = 1450;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1437)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1300&&a<1400){
+			difference_range = a-1300;
+			range_height_stable = 2; 
+			stable_range = 1437;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1424)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1400&&a<1500){
+			difference_range = a-1400;
+			range_height_stable = 2; 
+			stable_range = 1424;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1410)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1500&&a<1600){
+			difference_range = a-1500;
+			range_height_stable = 2; 
+			stable_range = 1410;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1397)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1600&&a<1700){
+			difference_range = a-1600;
+			range_height_stable = 2; 
+			stable_range = 1397;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1383)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1700&&a<1800){
+			difference_range = a-1700;
+			range_height_stable = 2; 
+			stable_range = 1383;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1369)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1800&&a<1900){
+			difference_range = a-1800;
+			range_height_stable = 3; 
+			stable_range = 1369;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1355)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1900&&a<2000){
+			difference_range = a-1900;
+			range_height_stable = 3; 
+			stable_range = 1355;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1341)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2000&&a<2100){
+			difference_range = a-2000;
+			range_height_stable = 3; 
+			stable_range = 1341;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1326)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2100&&a<2200){
+			difference_range = a-2100;
+			range_height_stable = 3; 
+			stable_range = 1326;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1312)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2200&&a<2300){
+			difference_range = a-2200;
+			range_height_stable = 4; 
+			stable_range = 1312;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1296)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2300&&a<2400){
+			difference_range = a-2300;
+			range_height_stable = 4; 
+			stable_range = 1296;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1281)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2400&&a<2500){
+			difference_range = a-2400;
+			range_height_stable = 4; 
+			stable_range = 1281;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1265)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2500&&a<2600){
+			difference_range = a-2500;
+			range_height_stable = 4; 
+			stable_range = 1265;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1249)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2600&&a<2700){
+			difference_range = a-2600;
+			range_height_stable = 5; 
+			stable_range = 1249;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1232)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2700&&a<2800){
+			difference_range = a-2700;
+			range_height_stable = 5; 
+			stable_range = 1232;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1215)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2800&&a<2900){
+			difference_range = a-2800;
+			range_height_stable = 5; 
+			stable_range = 1215;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1197)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2900&&a<3000){
+			difference_range = a-2900;
+			range_height_stable = 6; 
+			stable_range = 1197;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1179)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3000&&a<3100){
+			difference_range = a-3000;
+			range_height_stable = 6; 
+			stable_range = 1179;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1160)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3100&&a<3200){
+			difference_range = a-3100;
+			range_height_stable = 7; 
+			stable_range = 1160;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1140)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3200&&a<3300){
+			difference_range = a-3200;
+			range_height_stable = 7; 
+			stable_range = 1140;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1119)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3300&&a<3400){
+			difference_range = a-3300;
+			range_height_stable = 8; 
+			stable_range = 1119;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1096)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3400&&a<3500){
+			difference_range = a-3400;
+			range_height_stable = 9; 
+			stable_range = 1096;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1073)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3500&&a<3600){
+			difference_range = a-3500;
+			range_height_stable = 11; 
+			stable_range = 1073;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1048)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3600&&a<3700){
+			difference_range = a-3600;
+			range_height_stable = 12; 
+			stable_range = 1048;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1020)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3700&&a<3800){
+			difference_range = a-3700;
+			range_height_stable = 14; 
+			stable_range = 1020;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-989)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3800&&a<3900){
+			difference_range = a-3800;
+			range_height_stable = 16; 
+			stable_range = 989;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-954)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3900&&a<4000){
+			difference_range = a-3900;
+			range_height_stable = 20; 
+			stable_range = 954;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-910)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4000&&a<4100){
+			difference_range = a-4000;
+			range_height_stable = 27; 
+			stable_range = 910;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-847)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}
+		else {
+			alert("тип снаряда Charge_4 не может лететь дальше 4100метров");
+		}
+		console.log(calc_result_range);
+		document.getElementById('calculated_necesare_ungle_distace').innerHTML = calc_result_range;
+	});
+$('#calc_range_5').click(function(){ 
+		a = parseInt(document.getElementById('dist').value);  
+		if (isNaN(a)==true) a=0; 
+		range_height_variable = parseInt(document.getElementById('dist_height').value);  
+		if (isNaN(b)==true) b=0; 
+		var result = a ; 
+		var result2 = b;
+		document.getElementById('result').innerHTML = result;
+		document.getElementById('result2').innerHTML = result2; 
+		if(a<900){
+			alert("тип снаряда Charge_5 не может лететь меньше 900метров")
+		}else if(a>=900&&a<1000){
+			difference_range = a-900;
+			range_height_stable = 1; 
+			stable_range = 1507;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1497)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1000&&a<1100){
+			difference_range = a-1000;
+			range_height_stable = 1; 
+			stable_range = 1497;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1486)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1100&&a<1200){
+			difference_range = a-1100;
+			range_height_stable = 1; 
+			stable_range = 1486;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1475)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1200&&a<1300){
+			difference_range = a-1200;
+			range_height_stable = 1; 
+			stable_range = 1475;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1465)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1300&&a<1400){
+			difference_range = a-1300;
+			range_height_stable = 1; 
+			stable_range = 1465;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1454)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1400&&a<1500){
+			difference_range = a-1400;
+			range_height_stable = 1; 
+			stable_range = 1454;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1443)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1500&&a<1600){
+			difference_range = a-1500;
+			range_height_stable = 1; 
+			stable_range = 1443;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1432)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1600&&a<1700){
+			difference_range = a-1600;
+			range_height_stable = 1; 
+			stable_range = 1432;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1421)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1700&&a<1800){
+			difference_range = a-1700;
+			range_height_stable = 2; 
+			stable_range = 1421;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1410)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1800&&a<1900){
+			difference_range = a-1800;
+			range_height_stable = 2; 
+			stable_range = 1410;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1398)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1900&&a<2000){
+			difference_range = a-1900;
+			range_height_stable = 2; 
+			stable_range = 1398;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1387)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2000&&a<2100){
+			difference_range = a-2000;
+			range_height_stable = 2; 
+			stable_range = 1387;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1375)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2100&&a<2200){
+			difference_range = a-2100;
+			range_height_stable = 2; 
+			stable_range = 1375;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1364)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2200&&a<2300){
+			difference_range = a-2200;
+			range_height_stable = 2; 
+			stable_range = 1364;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1352)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2300&&a<2400){
+			difference_range = a-2300;
+			range_height_stable = 2; 
+			stable_range = 1352;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1340)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2400&&a<2500){
+			difference_range = a-2400;
+			range_height_stable = 2; 
+			stable_range = 1340;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1328)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2500&&a<2600){
+			difference_range = a-2500;
+			range_height_stable = 3; 
+			stable_range = 1328;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1315)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2600&&a<2700){
+			difference_range = a-2600;
+			range_height_stable = 3; 
+			stable_range = 1315;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1302)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2700&&a<2800){
+			difference_range = a-2700;
+			range_height_stable = 3; 
+			stable_range = 1302;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1290)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2800&&a<2900){
+			difference_range = a-2800;
+			range_height_stable = 3; 
+			stable_range = 1290;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1276)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2900&&a<3000){
+			difference_range = a-2900;
+			range_height_stable = 3; 
+			stable_range = 1276;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1263)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3000&&a<3100){
+			difference_range = a-3000;
+			range_height_stable = 3; 
+			stable_range = 1263;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1249)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3100&&a<3200){
+			difference_range = a-3100;
+			range_height_stable = 4; 
+			stable_range = 1249;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1236)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3200&&a<3300){
+			difference_range = a-3200;
+			range_height_stable = 4; 
+			stable_range = 1236;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1221)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3300&&a<3400){
+			difference_range = a-3300;
+			range_height_stable = 4; 
+			stable_range = 1221;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1206)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3400&&a<3500){
+			difference_range = a-3400;
+			range_height_stable = 5; 
+			stable_range = 1206;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1191)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3500&&a<3600){
+			difference_range = a-3500;
+			range_height_stable = 5; 
+			stable_range = 1191;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1176)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3600&&a<3700){
+			difference_range = a-3600;
+			range_height_stable = 5; 
+			stable_range = 1176;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1160)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3700&&a<3800){
+			difference_range = a-3700;
+			range_height_stable = 6; 
+			stable_range = 1160;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1143)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3800&&a<3900){
+			difference_range = a-3800;
+			range_height_stable = 6; 
+			stable_range = 1143;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1126)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3900&&a<4000){
+			difference_range = a-3900;
+			range_height_stable = 6; 
+			stable_range = 1126;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1108)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4000&&a<4100){
+			difference_range = a-4000;
+			range_height_stable = 7; 
+			stable_range = 1108;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1089)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4100&&a<4200){
+			difference_range = a-4100;
+			range_height_stable = 8; 
+			stable_range = 1089;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1069)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4200&&a<4300){
+			difference_range = a-4200;
+			range_height_stable = 9; 
+			stable_range = 1069;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1047)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4300&&a<4400){
+			difference_range = a-4300;
+			range_height_stable = 9; 
+			stable_range = 1047;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1024)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4400&&a<3400){
+			difference_range = a-4400;
+			range_height_stable = 11; 
+			stable_range = 1024;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-999)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4500&&a<4600){
+			difference_range = a-4500;
+			range_height_stable = 13; 
+			stable_range = 999;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-972)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4600&&a<4700){
+			difference_range = a-4600;
+			range_height_stable = 15; 
+			stable_range = 972;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-940)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4700&&a<4800){
+			difference_range = a-4700;
+			range_height_stable = 18; 
+			stable_range = 940;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-903)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4800&&a<4900){
+			difference_range = a-4800;
+			range_height_stable = 23; 
+			stable_range = 903;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-852)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}
+		else {
+			alert("тип снаряда Charge_5 не может лететь дальше 4900метров");
+		}
+		console.log(calc_result_range);
+		document.getElementById('calculated_necesare_ungle_distace').innerHTML = calc_result_range;
+	});
+$('#calc_range_6').click(function(){ 
+		a = parseInt(document.getElementById('dist').value);  
+		if (isNaN(a)==true) a=0; 
+		range_height_variable = parseInt(document.getElementById('dist_height').value);  
+		if (isNaN(b)==true) b=0; 
+		var result = a ; 
+		var result2 = b;
+		document.getElementById('result').innerHTML = result;
+		document.getElementById('result2').innerHTML = result2; 
+		if(a<1000){
+			alert("тип снаряда Charge_6 не может лететь меньше 1000метров")
+		}else if(a>=1000&&a<1100){
+			difference_range = a-1000;
+			range_height_stable = 1; 
+			stable_range = 1510;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1500)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1100&&a<1200){
+			difference_range = a-1100;
+			range_height_stable = 1; 
+			stable_range = 1500;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1491)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1200&&a<1300){
+			difference_range = a-1200;
+			range_height_stable = 1; 
+			stable_range = 1491;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1482)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1300&&a<1400){
+			difference_range = a-1300;
+			range_height_stable = 1; 
+			stable_range = 1482;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1473)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1400&&a<1500){
+			difference_range = a-1400;
+			range_height_stable = 1; 
+			stable_range = 1473;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1463)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1500&&a<1600){
+			difference_range = a-1500;
+			range_height_stable = 1; 
+			stable_range = 1463;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1454)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1600&&a<1700){
+			difference_range = a-1600;
+			range_height_stable = 1; 
+			stable_range = 1454;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1444)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1700&&a<1800){
+			difference_range = a-1700;
+			range_height_stable = 1; 
+			stable_range = 1444;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1435)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1800&&a<1900){
+			difference_range = a-1800;
+			range_height_stable = 1; 
+			stable_range = 1435;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1425)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=1900&&a<2000){
+			difference_range = a-1900;
+			range_height_stable = 1; 
+			stable_range = 1425;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1415)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2000&&a<2100){
+			difference_range = a-2000;
+			range_height_stable = 1; 
+			stable_range = 1415;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1405)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2100&&a<2200){
+			difference_range = a-2100;
+			range_height_stable = 1; 
+			stable_range = 1405;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1395)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2200&&a<2300){
+			difference_range = a-2200;
+			range_height_stable = 2; 
+			stable_range = 1395;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1385)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2300&&a<2400){
+			difference_range = a-2300;
+			range_height_stable = 2; 
+			stable_range = 1385;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1375)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2400&&a<2500){
+			difference_range = a-2400;
+			range_height_stable = 2; 
+			stable_range = 1375;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1365)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2500&&a<2600){
+			difference_range = a-2500;
+			range_height_stable = 2; 
+			stable_range = 1365;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1354)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2600&&a<2700){
+			difference_range = a-2600;
+			range_height_stable = 2; 
+			stable_range = 1354;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1344)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2700&&a<2800){
+			difference_range = a-2700;
+			range_height_stable = 2; 
+			stable_range = 1344;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1333)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2800&&a<2900){
+			difference_range = a-2800;
+			range_height_stable = 2; 
+			stable_range = 1333;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1322)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=2900&&a<3000){
+			difference_range = a-2900;
+			range_height_stable = 2; 
+			stable_range = 1322;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1311)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3000&&a<3100){
+			difference_range = a-3000;
+			range_height_stable = 2; 
+			stable_range = 1311;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1300)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3100&&a<3200){
+			difference_range = a-3100;
+			range_height_stable = 3; 
+			stable_range = 1300;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1289)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3200&&a<3300){
+			difference_range = a-3200;
+			range_height_stable = 3; 
+			stable_range = 1289;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1277)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3300&&a<3400){
+			difference_range = a-3300;
+			range_height_stable = 3; 
+			stable_range = 1277;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1265)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3400&&a<3500){
+			difference_range = a-3400;
+			range_height_stable = 3; 
+			stable_range = 1265;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1254)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3500&&a<3600){
+			difference_range = a-3500;
+			range_height_stable = 3; 
+			stable_range = 1254;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1241)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3600&&a<3700){
+			difference_range = a-3600;
+			range_height_stable = 3; 
+			stable_range = 1241;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1229)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3700&&a<3800){
+			difference_range = a-3700;
+			range_height_stable = 3; 
+			stable_range = 1229;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1216)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3800&&a<3900){
+			difference_range = a-3800;
+			range_height_stable = 4; 
+			stable_range = 1216;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1203)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=3900&&a<4000){
+			difference_range = a-3900;
+			range_height_stable = 4; 
+			stable_range = 1203;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1190)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4000&&a<4100){
+			difference_range = a-4000;
+			range_height_stable = 4; 
+			stable_range = 1190;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1176)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4100&&a<4200){
+			difference_range = a-4100;
+			range_height_stable = 4; 
+			stable_range = 1176;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1162)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4200&&a<4300){
+			difference_range = a-4200;
+			range_height_stable = 5; 
+			stable_range = 1162;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1148)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4300&&a<4400){
+			difference_range = a-4300;
+			range_height_stable = 5; 
+			stable_range = 1148;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1133)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4400&&a<4500){
+			difference_range = a-4400;
+			range_height_stable = 5; 
+			stable_range = 1133;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1117)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4500&&a<4600){
+			difference_range = a-4500;
+			range_height_stable = 6; 
+			stable_range = 1117;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1101)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4600&&a<4700){
+			difference_range = a-4600;
+			range_height_stable = 6; 
+			stable_range = 1101;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1084)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4700&&a<4800){
+			difference_range = a-4700;
+			range_height_stable = 7; 
+			stable_range = 1084;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1066)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4800&&a<4900){
+			difference_range = a-4800;
+			range_height_stable = 7; 
+			stable_range = 1066;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1047)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=4900&&a<5000){
+			difference_range = a-4900;
+			range_height_stable = 8; 
+			stable_range = 1047;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1028)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=5000&&a<5100){
+			difference_range = a-5000;
+			range_height_stable = 9; 
+			stable_range = 1028;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-1006)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=5100&&a<5200){
+			difference_range = a-5100;
+			range_height_stable = 10; 
+			stable_range = 1006;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-983)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=5200&&a<5300){
+			difference_range = a-5200;
+			range_height_stable = 12; 
+			stable_range = 983;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-958)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=5300&&a<5400){
+			difference_range = a-5300;
+			range_height_stable = 13; 
+			stable_range = 958;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-929)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=5400&&a<5500){
+			difference_range = a-5400;
+			range_height_stable = 16; 
+			stable_range = 929;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-894)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}else if(a>=5500&&a<5600){
+			difference_range = a-5500;
+			range_height_stable = 20; 
+			stable_range = 894;
+			range_height_variable = (range_height_variable*range_height_stable)/100;
+			variable_range = ((stable_range-849)/100)*difference_range; 
+			calc_result_range=stable_range-(range_height_variable+variable_range);
+		}
+		else {
+			alert("тип снаряда Charge_6 не может лететь дальше 5600метров");
+		}
+		console.log(calc_result_range);
+		document.getElementById('calculated_necesare_ungle_distace').innerHTML = calc_result_range;
+	});
 });
 

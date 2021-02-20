@@ -2,9 +2,10 @@ body {
 	width: 92vw; 
 	margin: 0 auto;
 	padding: 30px 15px;
+	font-family: 'Roboto', sans-serif;
+	background: #a0b3a1;
 } 
-.input_dates{
-	margin-bottom: 25px;
+.input_dates{ 
 }
 .align_input_blocks div{  
 }
@@ -15,4 +16,41 @@ body {
 	padding: 7px;
 	margin-bottom: 25px;
 	margin-top: 5px;
+}
+ul{
+	list-style-type: none;
+	padding-left: 0;  
+	margin-bottom: 45px;
+}
+.buttons{
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 5px;
+	margin-right: 15px;
+	text-align: left;
+	min-width: 110px;
+}
+.buttons input{ 
+}
+.button_calc{
+	outline: 5px gray solid;
+	display: inline-block; 
+	border: none;
+	font-size: 16px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-left: 5px;
+} 
+.button_calc:hover{
+	cursor: pointer;
+}
+.button_calc:focus,.button_calc:active{
+	outline: 5px green solid; 
+} 
+.text_parram{
+	font-size: 18px;
+}
+#calculated_necesare_ungle_distace{
+	font-size: 20;
+	font-weight: bold;
 }

@@ -6,30 +6,64 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 	<link rel="stylesheet" href="index.css">  
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
 </head>
 <body> 
 	<form>
 		<div class="input_dates">			
-			<div class="align_input_blocks">
+			<div class="text_parram align_input_blocks">
 				<div>Введите дальность</div>
 				<input id="dist" type="text" value="1">
 			</div>
-			<div class="align_input_blocks">
+			<div class="text_parram align_input_blocks">
 				<div>Введите разницу высот</div>
 				<input id="dist_height" type="text" value="1">
 			</div>
 		</div>
-		<input id="calc_range_0" type="button" value="charge 0">
-		<input id="calc_range_1" type="button" value="charge 1">
-		<input id="calc_range_2" type="button" value="charge 2">
-		<input id="calc_range_3" type="button" value="charge 3">
-		<input id="calc_range_4" type="button" value="charge 4">
-		<input id="calc_range_5" type="button" value="charge 5">
-		<div id="result"></div>
-		<div id="result2"></div>
+		<ul>
+			<li class="buttons">
+				<div>100м - 400м</div>
+				<input class="button_calc" id="calc_range_0" type="button" value="charge 0">	
+			</li>
+			<li class="buttons">
+				<div>300м - 1300м</div>
+				<input class="button_calc" id="calc_range_1" type="button" value="charge 1">			
+			</li>
+			<li class="buttons">
+				<div>500м - 2300м</div>
+				<input class="button_calc" id="calc_range_2" type="button" value="charge 2">			
+			</li>
+			<li class="buttons">
+				<div>600м - 3300м</div>
+				<input class="button_calc" id="calc_range_3" type="button" value="charge 3">			
+			</li>
+			<li class="buttons">
+				<div>800м - 4100м</div>
+				<input class="button_calc" id="calc_range_4" type="button" value="charge 4">			
+			</li>
+			<li class="buttons">
+				<div>900м - 4900м</div>
+				<input class="button_calc" id="calc_range_5" type="button" value="charge 5">			
+			</li>
+			<li class="buttons">
+				<div>1000м - 5600м</div>
+				<input class="button_calc" id="calc_range_6" type="button" value="charge 6">			
+			</li>
+		</ul>
+		<div class="text_parram">
+			<span>Введенная дальность: </span> <span id="result"></span>
+		</div>
+		<div class="text_parram">
+			<span>Введенная разница высот: </span><span id="result2"></span>
+		</div> 
 		<br>
 	</form>
-	<div id="result"></div>  
+		<div class="text_parram">
+			<span>Необходимый угол дальности: </span><span id="calculated_necesare_ungle_distace"></span>
+		</div>  
 </body>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
