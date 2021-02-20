@@ -18,7 +18,7 @@ $(document).ready(function(){
 		range_height_variable = parseInt(document.getElementById('dist_height').value);  
 		if (isNaN(b)==true) b=0; 
 		var result = a ; 
-		var result2 = b;
+		var result2 = range_height_variable;
 		document.getElementById('result').innerHTML = result;
 		document.getElementById('result2').innerHTML = result2;
 		//detected_input_range();
