@@ -58,7 +58,7 @@ $(document).ready(function(){
 		range_height_variable = parseInt(document.getElementById('dist_height').value);  
 		if (isNaN(b)==true) b=0; 
 		var result = a ; 
-		var result2 = b;
+		var result2 = range_height_variable;
 		document.getElementById('result').innerHTML = result;
 		document.getElementById('result2').innerHTML = result2; 
 		if(a<300){
@@ -147,7 +147,7 @@ $(document).ready(function(){
 		range_height_variable = parseInt(document.getElementById('dist_height').value);  
 		if (isNaN(b)==true) b=0; 
 		var result = a ; 
-		var result2 = b;
+		var result2 = range_height_variable;
 		document.getElementById('result').innerHTML = result;
 		document.getElementById('result2').innerHTML = result2; 
 		if(a<500){
@@ -296,7 +296,7 @@ $('#calc_range_3').click(function(){
 		range_height_variable = parseInt(document.getElementById('dist_height').value);  
 		if (isNaN(b)==true) b=0; 
 		var result = a ; 
-		var result2 = b;
+		var result2 = range_height_variable;
 		document.getElementById('result').innerHTML = result;
 		document.getElementById('result2').innerHTML = result2; 
 		if(a<600){
@@ -503,7 +503,7 @@ $('#calc_range_4').click(function(){
 		range_height_variable = parseInt(document.getElementById('dist_height').value);  
 		if (isNaN(b)==true) b=0; 
 		var result = a ; 
-		var result2 = b;
+		var result2 = range_height_variable;
 		document.getElementById('result').innerHTML = result;
 		document.getElementById('result2').innerHTML = result2; 
 		if(a<800){
@@ -752,7 +752,7 @@ $('#calc_range_5').click(function(){
 		range_height_variable = parseInt(document.getElementById('dist_height').value);  
 		if (isNaN(b)==true) b=0; 
 		var result = a ; 
-		var result2 = b;
+		var result2 = range_height_variable;
 		document.getElementById('result').innerHTML = result;
 		document.getElementById('result2').innerHTML = result2; 
 		if(a<900){
@@ -1050,7 +1050,7 @@ $('#calc_range_6').click(function(){
 		range_height_variable = parseInt(document.getElementById('dist_height').value);  
 		if (isNaN(b)==true) b=0; 
 		var result = a ; 
-		var result2 = b;
+		var result2 = range_height_variable;
 		document.getElementById('result').innerHTML = result;
 		document.getElementById('result2').innerHTML = result2; 
 		if(a<1000){
