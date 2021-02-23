@@ -23,47 +23,147 @@
 				<input id="dist_height" type="text" value="1">
 			</div>
 		</div>
-		<ul>
-			<li class="buttons">
-				<div>100м - 400м</div>
-				<input class="button_calc" id="calc_range_0" type="button" value="charge 0">	
-			</li>
-			<li class="buttons">
-				<div>300м - 1300м</div>
-				<input class="button_calc" id="calc_range_1" type="button" value="charge 1">			
-			</li>
-			<li class="buttons">
-				<div>500м - 2300м</div>
-				<input class="button_calc" id="calc_range_2" type="button" value="charge 2">			
-			</li>
-			<li class="buttons">
-				<div>600м - 3300м</div>
-				<input class="button_calc" id="calc_range_3" type="button" value="charge 3">			
-			</li>
-			<li class="buttons">
-				<div>800м - 4100м</div>
-				<input class="button_calc" id="calc_range_4" type="button" value="charge 4">			
-			</li>
-			<li class="buttons">
-				<div>900м - 4900м</div>
-				<input class="button_calc" id="calc_range_5" type="button" value="charge 5">			
-			</li>
-			<li class="buttons">
-				<div>1000м - 5600м</div>
-				<input class="button_calc" id="calc_range_6" type="button" value="charge 6">			
-			</li>
-		</ul>
-		<div class="text_parram">
-			<span>Введенная дальность: </span> <span id="result"></span>
+		<div class="output_dates">
+			<div class="text_parram">
+				<span>Введенная дальность: </span> <span id="result"></span>
+			</div>
+			<div class="text_parram">
+				<span>Введенная разница высот: </span><span id="result2"></span>
+			</div> 
+			<div class="text_parram">
+				<span>Необходимый угол дальности: </span><span id="calculated_necesare_ungle_distace"></span>
+			</div>  
 		</div>
-		<div class="text_parram">
-			<span>Введенная разница высот: </span><span id="result2"></span>
-		</div> 
+		<div class="tabs">
+		    <input id="tab1" type="radio" name="tabs" checked>
+		    <label for="tab1" title="Вкладка 1">Миномёт 2Б-14</label>
+		 
+		    <input id="tab2" type="radio" name="tabs">
+		    <label for="tab2" title="Вкладка 2">Миномёт M252</label>
+		 
+		    <input id="tab3" type="radio" name="tabs">
+		    <label for="tab3" title="Вкладка 3">Миномёт 120Krh</label>
+		 
+		    <input id="tab4" type="radio" name="tabs">
+		    <label for="tab4" title="Вкладка 4">Вкладка 4</label>
+			<section id="content-tab1">
+		        <p> 
+				<div id="title_weapon" class="title_weapon">Миномёт 2Б-14 82-мм </div> 
+				<div class="title_type_charge">Осколочно-фугасный (HE - High-Explosive) </div>
+					<ul>
+						<li class="buttons">
+							<div>100м - 400м</div>
+							<input class="button_calc" id="calc_range_0_w01" type="button" value="charge 0">	
+						</li>
+						<li class="buttons">
+							<div>300м - 1300м</div>
+							<input class="button_calc" id="calc_range_1_w01" type="button" value="charge 1">			
+						</li>
+						<li class="buttons">
+							<div>500м - 2300м</div>
+							<input class="button_calc" id="calc_range_2_w01" type="button" value="charge 2">			
+						</li>
+						<li class="buttons">
+							<div>600м - 3300м</div>
+							<input class="button_calc" id="calc_range_3_w01" type="button" value="charge 3">			
+						</li>
+						<li class="buttons">
+							<div>800м - 4100м</div>
+							<input class="button_calc" id="calc_range_4_w01" type="button" value="charge 4">			
+						</li>
+						<li class="buttons">
+							<div>900м - 4900м</div>
+							<input class="button_calc" id="calc_range_5_w01" type="button" value="charge 5">			
+						</li>
+						<li class="buttons">
+							<div>1000м - 5600м</div>
+							<input class="button_calc" id="calc_range_6_w01" type="button" value="charge 6">			
+						</li>
+					</ul>
+		        </p>
+		    </section>  
+		    <section id="content-tab2">
+		        <p>
+				<div id="title_weapon" class="title_weapon">Миномёт M252 - 81-мм</div>  
+				<div class="title_type_charge">Осколочно-фугасный (HE - High-Explosive) </div>
+				<ul>
+					<li class="buttons">
+						<div>100м - 500м</div>
+						<input class="button_calc" id="calc_range_0_w02_type01" type="button" value="charge 0">	
+					</li>
+					<li class="buttons">
+						<div>400м - 1700м</div>
+						<input class="button_calc" id="calc_range_1_w02_type01" type="button" value="charge 1">			
+					</li>
+					<li class="buttons">
+						<div>600м - 3000м</div>
+						<input class="button_calc" id="calc_range_2_w02_type01" type="button" value="charge 2">			
+					</li>
+					<li class="buttons">
+						<div>800м - 4200м</div>
+						<input class="button_calc" id="calc_range_3_w02_type01" type="button" value="charge 3">			
+					</li>
+					<li class="buttons">
+						<div>1000м - 5300м</div>
+						<input class="button_calc" id="calc_range_4_w02_type01" type="button" value="charge 4">			
+					</li> 
+				</ul>
+				<div class="title_type_charge">Фосфорный (WP - White Phosphorus) </div>
+				<ul>
+						<li class="buttons">
+							<div>100м - 400м</div>
+							<input class="button_calc" id="calc_range_0_w02_type02" type="button" value="charge 0">	
+						</li>
+						<li class="buttons">
+							<div>300м - 1600м</div>
+							<input class="button_calc" id="calc_range_1_w02_type02" type="button" value="charge 1">			
+						</li>
+						<li class="buttons">
+							<div>600м - 2900м</div>
+							<input class="button_calc" id="calc_range_2_w02_type02" type="button" value="charge 2">			
+						</li>
+						<li class="buttons">
+							<div>800м - 4000м</div>
+							<input class="button_calc" id="calc_range_3_w02_type02" type="button" value="charge 3">			
+						</li>
+						<li class="buttons">
+							<div>900м - 4800м</div>
+							<input class="button_calc" id="calc_range_4_w02_type02" type="button" value="charge 4">			
+						</li> 
+				</ul>
+		        </p>
+		    </section> 
+			<section id="content-tab3">
+		        <p> 
+				<div id="title_weapon" class="title_weapon">Миномёт 120Krh/40 - 120-мм </div> 
+				<div class="title_type_charge">Осколочно-фугасный (HE - High-Explosive) </div>
+					<ul>
+						<li class="buttons">
+							<div>200м - 900м</div>
+							<input class="button_calc" id="calc_range_0_w03_type01" type="button" value="charge 0">	
+						</li>
+						<li class="buttons">
+							<div>500м - 2400м</div>
+							<input class="button_calc" id="calc_range_1_w03_type01" type="button" value="charge 1">			
+						</li>
+						<li class="buttons">
+							<div>700м - 3900м</div>
+							<input class="button_calc" id="calc_range_2_w03_type01" type="button" value="charge 2">			
+						</li>
+						<li class="buttons">
+							<div>1000м - 5300м</div>
+							<input class="button_calc" id="calc_range_3_w03_type01" type="button" value="charge 3">			
+						</li>
+						<li class="buttons">
+							<div>1300м - 7300м</div>
+							<input class="button_calc" id="calc_range_4_w03_type01" type="button" value="charge 4">			
+						</li>
+					</ul>
+		        </p>
+		    </section>
+		</div>		
 		<br>
 	</form>
-		<div class="text_parram">
-			<span>Необходимый угол дальности: </span><span id="calculated_necesare_ungle_distace"></span>
-		</div>  
 </body>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
